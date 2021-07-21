@@ -28,7 +28,8 @@ has_var2 = thread.key?(:var2)
 has_var3 = thread.key?(:var3)
 
 count = 0
-thread = Thread.new {loop { count + 1 }}
+thread = Thread.new { loop { count +=1 }}
 sleep 1
 
 Thread.kill(thread)
+puts count
